@@ -11,7 +11,7 @@ const fs = require('fs');   //调用nodejs的fs模块
             }
            const newstr =  arrr2.join("\n");
            //将替换好的数组每条数据添加换行
-            fs.writeFile('./111.txt',newstr,function(err){
+            fs.writeFile(__dirname+'/111.txt',newstr,function(err){
                 //调用写入，写入数据是处理好的数组。
                 if(err){
                     console.log("替换文件目标失败，请检查替换文件路径")
