@@ -1,5 +1,5 @@
 const fs = require('fs');   //调用nodejs的fs模块
-    fs.readFile('./111.txt',"utf-8",function(err,data){    //读取文件
+    fs.readFile(__dirname+'/111.txt',"utf-8",function(err,data){    //读取文件
         if (err) {          //err如果为!null，即有保错信息
             return console.log("读取文件失败"); 
         } else {            //反之则读取到了文件
