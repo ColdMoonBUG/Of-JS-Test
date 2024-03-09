@@ -1,5 +1,6 @@
 const fs = require('fs');   //调用nodejs的fs模块
-    fs.readFile(__dirname+'/111.txt',"utf-8",function(err,data){    //读取文件
+const path = require('path'); //调用nodejs的path模块
+    fs.readFile(path.join(__dirname+,'/111.txt'),"utf-8",function(err,data){    //读取文件
         if (err) {          //err如果为!null，即有保错信息
             return console.log("读取文件失败"); 
         } else {            //反之则读取到了文件
@@ -11,7 +12,7 @@ const fs = require('fs');   //调用nodejs的fs模块
             }
            const newstr =  arrr2.join("\n");
            //将替换好的数组每条数据添加换行
-            fs.writeFile(__dirname+'/111.txt',newstr,function(err){
+            fs.writeFile(path.join(__dirname+,'/111.txt'),newstr,function(err){
                 //调用写入，写入数据是处理好的数组。
                 if(err){
                     console.log("替换文件目标失败，请检查替换文件路径")
